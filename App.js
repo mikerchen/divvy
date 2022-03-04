@@ -1,22 +1,30 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { ImageBackground, StyleSheet, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Home from './src/Home/components/HomeComponent';
 import Create from './src/Create/components/CreateComponent';
+import HomeStack from './src/navigators/HomeNavigator';
 
 const Tab = createBottomTabNavigator();
+
+const bgImage = { uri: 'divvy/Images.xcassets/bg.png'}
 
 export default function App() {
   return (
     <>
-      <NavigationContainer>
-        <Tab.Navigator>
-          <Tab.Screen name="Home" component={Home} />
-          <Tab.Screen name="Profile" component={Create} />
-          
-        </Tab.Navigator>
-      </NavigationContainer>
+      <View style={styles.container}>
+          <NavigationContainer>
+            <Tab.Navigator
+              screenOptions={{
+                headerShown: false
+              }}
+            >
+              <Tab.Screen name="Home" component={HomeStack} />
+              <Tab.Screen name="Profile" component={Create} />       
+            </Tab.Navigator>
+          </NavigationContainer>
+      </View>
     </>
   );
 }
@@ -24,8 +32,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+    flexDirection: 'column',
+    backgroundColor: '#FDFFEA'
+  }
 });

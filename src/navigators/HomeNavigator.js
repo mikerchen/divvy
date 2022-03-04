@@ -9,9 +9,10 @@ export default function HomeStack() {
     <Stack.Navigator
       initialRouteName="Home"
       screenOptions={{
+        headerShown: 'false',
         headerMode: 'screen',
-        headerTintColor: 'white',
-        headerStyle: { backgroundColor: 'tomato' },
+        headerTintColor: 'black',
+        headerStyle: { backgroundColor: '#FDFFEA' },
       }}
     >
       <Stack.Screen
