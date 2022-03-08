@@ -3,6 +3,7 @@ import { View, Text, TextInput, Alert, StyleSheet, ScrollView} from 'react-nativ
 import { Button } from 'react-native-paper';
 import { Picker } from '@react-native-picker/picker';
 import DateTimePicker from '@react-native-community/datetimepicker';
+import { firebase } from '../../firebase/config';
 
 
 export default function Create() {
@@ -22,6 +23,8 @@ export default function Create() {
         console.log(text)
         console.log(name)
     }
+
+    const EventsRef  = firebase.firestore().collection('events')
 
     return( 
         <>
