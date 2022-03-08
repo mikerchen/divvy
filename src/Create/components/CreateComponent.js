@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, Alert, StyleSheet} from 'react-native';
+import { View, Text, TextInput, Alert, StyleSheet, ScrollView} from 'react-native';
 import { Button } from 'react-native-paper';
 import { Picker } from '@react-native-picker/picker';
 import DateTimePicker from '@react-native-community/datetimepicker';
@@ -25,7 +25,7 @@ export default function Create() {
 
     return( 
         <>
-            <View>
+            <ScrollView>
                 <View>
                     <Text>Create an Event</Text>
                     <TextInput name="name" placeholder='Event Name' onChangeText={(text, name) => handleChange(text, 'name')}/>
@@ -83,7 +83,7 @@ export default function Create() {
                     mode="outlined"
                 > Create my Event
                 </Button>
-            </View>
+            </ScrollView>
         </>
     )
 }
